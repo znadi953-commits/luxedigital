@@ -13,7 +13,7 @@ window.PRODUCT_LINKS = {
     ugc:          { payhip: "https://payhip.com/b/ShgH4", lemon: "", gumroad: "" },
     youtube:      { payhip: "https://payhip.com/b/jZ67T", lemon: "", gumroad: "" },
     prompt:       { payhip: "https://payhip.com/b/s2twL", lemon: "", gumroad: "" },
-    shorts:       { payhip: "", lemon: "", gumroad: "" },
+    shorts:       { payhip: "https://payhip.com/b/NmEIQ", lemon: "", gumroad: "" },
     microsaas:    { payhip: "", lemon: "", gumroad: "" },
     cours:        { payhip: "", lemon: "", gumroad: "" },
     agence:       { payhip: "", lemon: "", gumroad: "" },
