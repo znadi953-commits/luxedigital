@@ -21,7 +21,7 @@ window.PRODUCT_LINKS = {
     email:        { payhip: "https://payhip.com/b/kVDSP", lemon: "", gumroad: "" },
     finance:      { payhip: "https://payhip.com/b/AWwVo", lemon: "", gumroad: "" },
     productivite: { payhip: "https://payhip.com/b/jwebk", lemon: "", gumroad: "" },
-    agentique:    { payhip: "", lemon: "", gumroad: "" },
+    agentique:    { payhip: "https://payhip.com/b/oKX84", lemon: "", gumroad: "" },
     bundle:       { payhip: "", lemon: "", gumroad: "" }
 };
 
