@@ -17,7 +17,7 @@ window.PRODUCT_LINKS = {
     microsaas:    { payhip: "https://payhip.com/b/8GfgK", lemon: "", gumroad: "" },
     cours:        { payhip: "https://payhip.com/b/gf83M", lemon: "", gumroad: "" },
     agence:       { payhip: "https://payhip.com/b/bxMY8", lemon: "", gumroad: "" },
-    identite:     { payhip: "", lemon: "", gumroad: "" },
+    identite:     { payhip: "https://payhip.com/b/y3J9E", lemon: "", gumroad: "" },
     email:        { payhip: "", lemon: "", gumroad: "" },
     finance:      { payhip: "https://payhip.com/b/AWwVo", lemon: "", gumroad: "" },
     productivite: { payhip: "", lemon: "", gumroad: "" },
