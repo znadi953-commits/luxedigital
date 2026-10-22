@@ -20,7 +20,7 @@ window.PRODUCT_LINKS = {
     identite:     { payhip: "https://payhip.com/b/y3J9E", lemon: "", gumroad: "" },
     email:        { payhip: "https://payhip.com/b/kVDSP", lemon: "", gumroad: "" },
     finance:      { payhip: "https://payhip.com/b/AWwVo", lemon: "", gumroad: "" },
-    productivite: { payhip: "", lemon: "", gumroad: "" },
+    productivite: { payhip: "https://payhip.com/b/jwebk", lemon: "", gumroad: "" },
     agentique:    { payhip: "", lemon: "", gumroad: "" },
     bundle:       { payhip: "", lemon: "", gumroad: "" }
 };
