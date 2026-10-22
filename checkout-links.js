@@ -22,7 +22,7 @@ window.PRODUCT_LINKS = {
     finance:      { payhip: "https://payhip.com/b/AWwVo", lemon: "", gumroad: "" },
     productivite: { payhip: "https://payhip.com/b/jwebk", lemon: "", gumroad: "" },
     agentique:    { payhip: "https://payhip.com/b/oKX84", lemon: "", gumroad: "" },
-    bundle:       { payhip: "", lemon: "", gumroad: "" }
+    bundle:       { payhip: "https://payhip.com/b/V97Eq", lemon: "", gumroad: "" }
 };
 
 // Renvoie le lien de paiement réel si configuré, sinon null
