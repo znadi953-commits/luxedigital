@@ -7,7 +7,7 @@
    ============================================================ */
 window.PRODUCT_LINKS = {
     protein:      { payhip: "https://payhip.com/b/K6czk", lemon: "", gumroad: "" },
-    freelancer:   { payhip: "", lemon: "", gumroad: "" },
+    freelancer:   { payhip: "https://payhip.com/b/5K42c", lemon: "", gumroad: "" },
     automation:   { payhip: "", lemon: "", gumroad: "" },
     agents:       { payhip: "", lemon: "", gumroad: "" },
     ugc:          { payhip: "", lemon: "", gumroad: "" },
