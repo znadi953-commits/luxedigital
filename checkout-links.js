@@ -10,7 +10,7 @@ window.PRODUCT_LINKS = {
     freelancer:   { payhip: "https://payhip.com/b/5K42c", lemon: "", gumroad: "" },
     automation:   { payhip: "https://payhip.com/b/xA9eR", lemon: "", gumroad: "" },
     agents:       { payhip: "https://payhip.com/b/V0fEL", lemon: "", gumroad: "" },
-    ugc:          { payhip: "", lemon: "", gumroad: "" },
+    ugc:          { payhip: "https://payhip.com/b/ShgH4", lemon: "", gumroad: "" },
     youtube:      { payhip: "", lemon: "", gumroad: "" },
     prompt:       { payhip: "", lemon: "", gumroad: "" },
     shorts:       { payhip: "", lemon: "", gumroad: "" },
