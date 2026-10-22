@@ -6,7 +6,7 @@
    redirigent automatiquement vers le paiement sécurisé.
    ============================================================ */
 window.PRODUCT_LINKS = {
-    protein:      { payhip: "", lemon: "", gumroad: "" },
+    protein:      { payhip: "https://payhip.com/b/K6czk", lemon: "", gumroad: "" },
     freelancer:   { payhip: "", lemon: "", gumroad: "" },
     automation:   { payhip: "", lemon: "", gumroad: "" },
     agents:       { payhip: "", lemon: "", gumroad: "" },
