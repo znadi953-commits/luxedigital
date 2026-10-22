@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE DIGITAL — Bibliothèque de Produits Digitaux Premium</title>
+    <meta name="description" content="Ebooks digitaux de luxe créés avec l'IA. Nutrition végétale, freelance IA, automatisation business. Téléchargement immédiat.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           LUXE DIGITAL — DESIGN SYSTEM
+           ========================================= */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #121212;
+            --gold: #c5a059;
+            --gold-light: #d9b87a;
+            --gold-dim: #8a7048;
+            --text-main: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --accent: #c5a059;
+            --border: #2a2a2a;
+            --radius: 16px;
+            --shadow: 0 20px 60px rgba(0,0,0,0.6);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* =========================================
+           UTILITIES
+           ========================================= */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, #b89453 100%);
+            color: #0a0a0a;
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(197, 160, 89, 0.5);
+            background: linear-gradient(135deg, #d9b87a 0%, var(--gold) 100%);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1.5px solid var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-main);
+            color: #0a0a0a;
+            border-color: var(--text-main);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(197, 160, 89, 0.1);
+            color: var(--gold-light);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            margin-bottom: 16px;
+        }
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 28px 0;
+            z-index: 1000;
+            transition: var(--transition);
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        nav.scrolled {
+            padding: 16px 0;
+            background: rgba(10, 10, 10, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--gold-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .nav-mobile {
+            display: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 60% 40%, rgba(197, 160, 89, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 24px;
+            animation: fadeUp 1s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero .badge {
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* =========================================
+           BOOKS SHOWCASE
+           ========================================= */
+        .books-section {
+            position: relative;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .book-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .book-card:hover {
+            border-color: var(--gold-dim);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .book-card:hover::before {
+            opacity: 1;
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 420px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .book-info {
+            padding: 32px;
+        }
+
+        .book-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .book-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .book-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .book-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .book-actions .btn {
+            flex: 1;
+            justify-content: center;
+            padding: 12px 20px;
+        }
+
+        /* =========================================
+           FEATURES
+           ========================================= */
+        .features {
+            background: var(--bg-card);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            padding: 40px 32px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold-dim);
+            background: #161616;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(197, 160, 89, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .feature-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* =========================================
+           PRICING / CTA
+           ========================================= */
+        .cta-section {
+            background: radial-gradient(circle at top, #1a1a1a 0%, #0a0a0a 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 2.75rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px 32px;
+            text-align: center;
+            width: 340px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--gold-dim);
+            box-shadow: var(--shadow);
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured::after {
+            content: 'POPULAIRE';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #0a0a0a;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 20px;
+        }
+
+        .pricing-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .currency {
+            font-size: 1rem;
+            vertical-align: top;
+            margin-top: 4px;
+            color: var(--text-muted);
+        }
+
+        .pricing-card .period {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card ul li {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pricing-card ul li::before {
+            content: '✓';
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        /* =========================================
+           TESTIMONIALS
+           ========================================= */
+        .testimonials {
+            background: var(--bg-card);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial {
+            padding: 40px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: #121212;
+        }
+
+        .testimonial p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 32px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, #b89453 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a0a;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .author-info h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* =========================================
+           FAQ
+           ========================================= */
+        .faq-grid {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--gold-dim);
+        }
+
+        .faq-question {
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-answer {
+            padding: 0 32px;
+            max-height: 0;
+            overflow: hidden;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            padding: 0 32px 24px;
+            max-height: 300px;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            transition: var(--transition);
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #090909;
+            border-top: 1px solid var(--border);
+            padding: 80px 0 40px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .newsletter {
+            margin-top: 32px;
+        }
+
+        .newsletter input {
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 14px 24px;
+            color: var(--text-main);
+            width: 100%;
+            max-width: 300px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .newsletter input:focus {
+            outline: none;
+            border-color: var(--gold-dim);
+        }
+
+        .newsletter .btn {
+            margin-top: 12px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           MODAL / BOOK DETAIL
+           ========================================= */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            backdrop-filter: blur(12px);
+            justify-content: center;
+            align-items: center;
+            padding: 40px 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.4s ease;
+        }
+
+        .modal.open .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            font-size: 2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            z-index: 10;
+            line-height: 1;
+        }
+
+        .modal-body {
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .modal-cover img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .modal-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .modal-info .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold-light);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .modal-info p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .modal-info ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .modal-info ul li {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .modal-info ul li::before {
+            content: '—';
+            color: var(--gold-light);
+            position: absolute;
+            left: 8px;
+            font-weight: 700;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-mobile {
+                display: block;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .modal-body { grid-template-columns: 1fr; padding: 32px; }
+            .pricing-card { width: 100%; max-width: 340px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+        }
+
+        @media (max-width: 600px) {
+            .section { padding: 80px 0; }
+            .section-title { font-size: 2.2rem; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .book-actions { flex-direction: column; }
+            .cta-section h2 { font-size: 2rem; }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">LUXE<span>DIGITAL</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#books">Produits</a></li>
+                <li><a href="#features">Avantages</a></li>
+                <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#books" class="btn btn-primary">Acheter</a>
+            <div class="nav-mobile">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="badge">Produits digitaux premium</div>
+            <h1>L'excellence digitale<br><span>à votre portée.</span></h1>
+            <p>Ebooks conçus avec l'intelligence artificielle, design premium, valeur immédiate. Téléchargement instantané après achat.</p>
+            <div class="hero-actions">
+                <a href="#books" class="btn btn-primary">Voir la collection</a>
+                <a href="#faq" class="btn btn-outline">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books -->
+    <section class="books-section" id="books">
+        <div class="container">
+            <h2 class="section-title">Notre Collection</h2>
+            <p class="section-subtitle">Deux produits digitaux conçus pour transformer votre quotidien et votre business.</p>
+            
+            <div class="books-grid">
+                
+                <!-- Book 1: Protein Boost -->
+                <div class="book-card" onclick="openModal('protein')">
+                    <div class="book-cover">
+                        <img src="assets/images/protein-cover.jpg" alt="Protein Boost Express">
+                    </div>
+                    <div class="book-info">
+                        <h3>Protein Boost Express</h3>
+                        <p>30 recettes végétaliennes riches en protéines, prêtes en moins de 15 minutes. Pour manger sain, même les jours pressés.</p>
+                        <span class="book-price">14 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); openModal('protein')">Détails</a>
+                            <a href="checkout.html?book=protein" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2: Freelancer IA -->
+                <div class="book-card" onclick="openModal('freelancer')">
+                    <div class="book-cover">
+                        <img src="assets/images/freelancer-cover.jpg" alt="Le Système Freelancer IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Le Système Freelancer IA</h3>
+                        <p>Automatise ton admin, trouve des clients et gère tes projets sans stress. 50 prompts copy-paste inclus.</p>
+                        <span class="book-price">17 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('freelancer')">Détails</a>
+                            <a href="checkout.html?book=freelancer" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3: Automation Business IA -->
+                <div class="book-card" onclick="openModal('automation')">
+                    <div class="book-cover">
+                        <img src="assets/images/automation-cover.jpg" alt="L'Automation Business IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>L'Automation Business IA</h3>
+                        <p>Le système complet pour automatiser ton business en ligne sans y passer tes journées.</p>
+                        <span class="book-price">22 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('automation')">Détails</a>
+                            <a href="checkout.html?book=automation" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4: Les Agents IA Autonomes -->
+                <div class="book-card" onclick="openModal('agents')">
+                    <div class="book-cover">
+                        <img src="assets/images/agents-cover.jpg" alt="Les Agents IA Autonomes">
+                    </div>
+                    <div class="book-info">
+                        <h3>Les Agents IA Autonomes</h3>
+                        <p>Le guide complet pour déployer des agents IA qui travaillent pour toi 24/7.</p>
+                        <span class="book-price">27 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('agents')">Détails</a>
+                            <a href="checkout.html?book=agents" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5: Le Système UGC IA -->
+                <div class="book-card" onclick="openModal('ugc')">
+                    <div class="book-cover">
+                        <img src="assets/images/ugc-cover.jpg" alt="Le Système UGC IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Le Système UGC IA</h3>
+                        <p>Crée des publicités vidéo qui vendent sans montrer ton visage.</p>
+                        <span class="book-price">25 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('ugc')">Détails</a>
+                            <a href="checkout.html?book=ugc" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 6: L'Empire YouTube Sans Visage IA -->
+                <div class="book-card" onclick="openModal('youtube')">
+                    <div class="book-cover">
+                        <img src="assets/images/youtube-cover.jpg" alt="L'Empire YouTube Sans Visage IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>L'Empire YouTube Sans Visage IA</h3>
+                        <p>Crée une chaîne YouTube rentable sans jamais montrer ton visage.</p>
+                        <span class="book-price">24 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('youtube')">Détails</a>
+                            <a href="checkout.html?book=youtube" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7: Prompt Engineering IA -->
+                <div class="book-card" onclick="openModal('prompt')">
+                    <div class="book-cover">
+                        <img src="assets/images/prompt-cover.jpg" alt="Prompt Engineering IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Prompt Engineering IA</h3>
+                        <p>Maîtrise l'art de parler aux IA pour obtenir des résultats professionnels.</p>
+                        <span class="book-price">19 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('prompt')">Détails</a>
+                            <a href="checkout.html?book=prompt" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8: Vidéos Courtes Virales IA -->
+                <div class="book-card" onclick="openModal('shorts')">
+                    <div class="book-cover">
+                        <img src="assets/images/shorts-cover.jpg" alt="Vidéos Courtes Virales IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Vidéos Courtes Virales IA</h3>
+                        <p>Crée des TikTok, Reels et Shorts qui cartonnent sans montrer ton visage.</p>
+                        <span class="book-price">24 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('shorts')">Détails</a>
+                            <a href="checkout.html?book=shorts" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9: Micro-SaaS IA No-Code -->
+                <div class="book-card" onclick="openModal('microsaas')">
+                    <div class="book-cover">
+                        <img src="assets/images/micro-saas-cover.jpg" alt="Micro-SaaS IA No-Code">
+                    </div>
+                    <div class="book-info">
+                        <h3>Micro-SaaS IA No-Code</h3>
+                        <p>Crée ton petit logiciel SaaS rentable sans écrire une ligne de code.</p>
+                        <span class="book-price">29 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('microsaas')">Détails</a>
+                            <a href="checkout.html?book=microsaas" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 10: Cours en Ligne IA -->
+                <div class="book-card" onclick="openModal('cours')">
+                    <div class="book-cover">
+                        <img src="assets/images/cours-en-ligne-cover.jpg" alt="Cours en Ligne IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Cours en Ligne IA</h3>
+                        <p>Crée et vends ta formation en 7 jours avec l'intelligence artificielle.</p>
+                        <span class="book-price">26 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('cours')">Détails</a>
+                            <a href="checkout.html?book=cours" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 11: Agence d'Automatisation IA -->
+                <div class="book-card" onclick="openModal('agence')">
+                    <div class="book-cover">
+                        <img src="assets/images/agence-ia-cover.jpg" alt="Agence d'Automatisation IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Agence d'Automatisation IA</h3>
+                        <p>Vends des systèmes d'intelligence artificielle aux entreprises.</p>
+                        <span class="book-price">35 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('agence')">Détails</a>
+                            <a href="checkout.html?book=agence" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 12: Identité Visuelle IA -->
+                <div class="book-card" onclick="openModal('identite')">
+                    <div class="book-cover">
+                        <img src="assets/images/identite-visuelle-cover.jpg" alt="Identité Visuelle IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Identité Visuelle IA</h3>
+                        <p>Crée toute l'image de ton business sans graphiste.</p>
+                        <span class="book-price">24 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('identite')">Détails</a>
+                            <a href="checkout.html?book=identite" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 13: Email Marketing IA -->
+                <div class="book-card" onclick="openModal('email')">
+                    <div class="book-cover">
+                        <img src="assets/images/email-cover.jpg" alt="Email Marketing IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Email Marketing IA</h3>
+                        <p>Crée des campagnes email qui vendent en automatique.</p>
+                        <span class="book-price">22 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="openModal('email')">Détails</a>
+                            <a href="checkout.html?book=email" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 14: Finance IA -->
+                <div class="book-card" onclick="openModal('finance')">
+                    <div class="book-cover">
+                        <img src="assets/images/finance-cover.jpg" alt="L'Argent Intelligent IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>L'Argent Intelligent IA</h3>
+                        <p>Finance personnelle, budget, investissements et revenus complémentaires — pilotés par l'IA.</p>
+                        <span class="book-price">24 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); openModal('finance')">Détails</a>
+                            <a href="checkout.html?book=finance" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 15: Productivité Notion IA -->
+                <div class="book-card" onclick="openModal('productivite')">
+                    <div class="book-cover">
+                        <img src="assets/images/productivite-cover.jpg" alt="Productivité & Notion IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Productivité &amp; Notion IA</h3>
+                        <p>Le système ultime : Notion + IA pour organiser ta vie, tes projets et tes habitudes.</p>
+                        <span class="book-price">22 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); openModal('productivite')">Détails</a>
+                            <a href="checkout.html?book=productivite" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 16: Commerce Agentique IA -->
+                <div class="book-card" onclick="openModal('agentique')">
+                    <div class="book-cover">
+                        <img src="assets/images/agentique-cover.jpg" alt="Commerce Agentique IA">
+                    </div>
+                    <div class="book-info">
+                        <h3>Commerce Agentique IA</h3>
+                        <p>Vendre à l'ère des agents IA qui achètent pour vos clients. La méthode 2026.</p>
+                        <span class="book-price">29 €</span>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); openModal('agentique')">Détails</a>
+                            <a href="checkout.html?book=agentique" class="btn btn-outline" onclick="event.stopPropagation()">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bundle Section -->
+    <section class="section" style="background: var(--bg-card);">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+                <div class="badge">Offre Spéciale</div>
+                <h2 style="font-size: 2.25rem; margin-bottom: 16px;">Le Pack Complet — Tous les 16 Ebooks</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px;">
+                    Procurez-vous l'intégralité de la collection LUXE DIGITAL à prix réduit. Nutrition, Freelance, Automation, Agents IA, UGC, YouTube, Prompts, Shorts, Micro-SaaS, Cours, Agence, Identité Visuelle, Email Marketing, Finance, Productivité Notion et Commerce Agentique.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 16px;">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through;">Valeur séparée : 383 €</span>
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 800; color: var(--gold-light);">230 €</span>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="bundle.html" class="btn btn-primary" style="max-width: 300px; margin: 0 auto;">
+                    Voir le Pack Complet
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir LUXE DIGITAL</h2>
+            <p class="section-subtitle">Chaque produit est pensé pour vous faire gagner du temps, de l'argent et de l'énergie.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Téléchargement immédiat</h4>
+                    <p>Recevez votre ebook en PDF dès la validation du paiement. Aucun délai d'attente.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h4>Créé avec l'IA</h4>
+                    <p>Contenu optimisé, structure professionnelle, et prompts copy-paste pour passer à l'action rapidement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>Garantie 14 jours</h4>
+                    <p>Satisfait ou remboursé. Testez sans risque pendant deux semaines.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h4>Paiement sécurisé</h4>
+                    <p>Transactions protégées via Stripe / PayPal. Vos données sont en sécurité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Pricing -->
+    <section class="cta-section" id="pricing">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à transformer votre quotidien ?</h2>
+                <p>Choisissez le produit qui correspond à vos besoins et commencez dès aujourd'hui.</p>
+                
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="price">14<span class="currency">€</span></div>
+                        <div class="period">Paiement unique</div>
+                        <ul>
+                            <li>30 recettes végétaliennes protéinées</li>
+                            <li>Menu type sur 7 jours</li>
+                            <li>Checklist bonus incluse</li>
+                            <li>Format PDF haute qualité</li>
+                        </ul>
+                        <a href="checkout.html?book=protein" class="btn btn-primary" style="width:100%">Acheter Protein Boost</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="price">17<span class="currency">€</span></div>
+                        <div class="period">Paiement unique</div>
+                        <ul>
+                            <li>9 chapitres + 50 prompts copy-paste</li>
+                            <li>Checklist lancement 7 jours</li>
+                            <li>Templates devis & factures</li>
+                            <li>Format PDF haute qualité</li>
+                        </ul>
+                        <a href="checkout.html?book=freelancer" class="btn btn-primary" style="width:100%">Acheter Freelancer IA</a>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 40px; font-size: 0.9rem; color: var(--text-muted);">Garantie satisfait ou remboursé pendant 14 jours • Téléchargement immédiat</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Ce qu'ils en disent</h2>
+            <p class="section-subtitle">Des résultats concrets, dès la première semaine.</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Enfin un ebook de recettes qui comprend mon emploi du temps. Les 15 minutes, c'est réel, et je n'ai plus jamais faim à 15h."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SA</div>
+                        <div class="author-info">
+                            <h5>Sarah A.</h5>
+                            <p>Professionnelle de santé</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Le système freelance IA m'a fait gagner 5 heures par semaine sur l'administratif. Mes devis sont prêts en 30 secondes."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ML</div>
+                        <div class="author-info">
+                            <h5>Marc L.</h5>
+                            <p>Graphiste freelance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Qualité premium, design soigné, et contenu vraiment utile. Je recommande les yeux fermés."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ND</div>
+                        <div class="author-info">
+                            <h5>Nadia D.</h5>
+                            <p>Auto-entrepreneure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <p class="section-subtitle">Tout ce que vous devez savoir avant de commander.</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Comment recevoir mon ebook après achat ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Dès validation du paiement, vous recevez un email avec un lien de téléchargement sécurisé. L'ebook est au format PDF, lisible sur tous vos appareils.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Puis-je lire l'ebook sur mon téléphone ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Oui. Le format PDF s'ouvre sur iPhone, Android, tablette, ordinateur et liseuse compatible.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                    Quelle est la politique de remboursement ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Vous disposez de 14 jours pour demander un remboursement intégral, sans justification, en contactant notre support.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Ai-je besoin de compétences techniques ?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Aucunement. Nos ebooks sont conçus pour être utilisés immédiatement, même par des débutants complets.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">LUXE<span>DIGITAL</span></a>
+                    <p>Bibliothèque de produits digitaux premium, créés avec l'intelligence artificielle pour votre réussite personnelle et professionnelle.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Votre email">
+                        <button class="btn btn-primary">S'abonner</button>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-heading">Boutique</div>
+                    <ul>
+                        <li><a href="#books">Protein Boost Express</a></li>
+                        <li><a href="#books">Le Système Freelancer IA</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-heading">Contact</div>
+                    <ul>
+                        <li><a href="mailto:support@luxedigital.com">support@luxedigital.com</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="cgv.html">Conditions générales de vente</a></li>
+                        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 LUXE DIGITAL. Tous droits réservés.</span>
+                <span>Paiement sécurisé • Téléchargement immédiat</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal: Protein Boost -->
+    <div class="modal" id="modal-protein">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('protein')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/protein-cover.jpg" alt="Protein Boost Express">
+                </div>
+                <div class="modal-info">
+                    <h2>Protein Boost Express</h2>
+                    <span class="price">14 €</span>
+                    <p><strong>30 recettes végétaliennes riches en protéines, prêtes en moins de 15 minutes.</strong></p>
+                    <p>Un guide pratique pour les gens pressés qui veulent manger mieux sans passer des heures en cuisine. Petit-déjeuners énergisants, déjeuners express pour le bureau, dîners légers, et collations protéinées.</p>
+                    <ul>
+                        <li>8 chapitres détaillés et professionnels</li>
+                        <li>30 recettes testées avec valeurs nutritionnelles</li>
+                        <li>Menu type sur 7 jours + liste de courses</li>
+                        <li>Astuces batch cooking et conservation</li>
+                        <li>Checklist bonus "Ma semaine protéinée"</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=protein" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Freelancer IA -->
+    <div class="modal" id="modal-freelancer">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('freelancer')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/freelancer-cover.jpg" alt="Le Système Freelancer IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Le Système Freelancer IA</h2>
+                    <span class="price">17 €</span>
+                    <p><strong>Automatise ton admin, trouve des clients et gère tes projets sans stress.</strong></p>
+                    <p>Un guide complet pour les freelances et auto-entrepreneurs qui veulent travailler moins sur l'administratif et plus sur leurs vrais projets.</p>
+                    <ul>
+                        <li>9 chapitres : IA, outils, admin, prospection, offres, projets, prix, planning</li>
+                        <li>50 prompts copy-paste (ChatGPT / Gemini)</li>
+                        <li>Templates de devis, factures et relances</li>
+                        <li>Méthode de prospection LinkedIn avec l'IA</li>
+                        <li>Guide de prix et négociation client</li>
+                        <li>Planning type sur 7 jours</li>
+                    </ul>
+                    <a href="checkout.html?book=freelancer" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Automation Business IA -->
+    <div class="modal" id="modal-automation">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('automation')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/automation-cover.jpg" alt="L'Automation Business IA">
+                </div>
+                <div class="modal-info">
+                    <h2>L'Automation Business IA</h2>
+                    <span class="price">22 €</span>
+                    <p><strong>Le système complet pour automatiser ton business en ligne sans y passer tes journées.</strong></p>
+                    <p>Apprends à automatiser ton service client, la création de contenu, les ventes, et l'administration grâce à l'intelligence artificielle. Libère ton temps pour te concentrer sur ce qui crée vraiment de la valeur.</p>
+                    <ul>
+                        <li>8 chapitres détaillés sur l'automatisation business</li>
+                        <li>Checklist d'automatisation 7 jours</li>
+                        <li>Outils IA recommandés (gratuits et payants)</li>
+                        <li>Chatbot IA et séquences d'emails automatiques</li>
+                        <li>Système de création de contenu en batch</li>
+                        <li>Entonnoir de vente automatisé</li>
+                        <li>Gestion administrative simplifiée</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=automation" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Les Agents IA Autonomes -->
+    <div class="modal" id="modal-agents">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('agents')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/agents-cover.jpg" alt="Les Agents IA Autonomes">
+                </div>
+                <div class="modal-info">
+                    <h2>Les Agents IA Autonomes</h2>
+                    <span class="price">27 €</span>
+                    <p><strong>Le guide complet pour déployer des agents IA qui travaillent pour toi 24/7.</strong></p>
+                    <p>Apprends à créer des agents IA autonomes qui planifient, exécutent et prennent des décisions pour ton business : relance de factures, prospection, contenu, service client, et bien plus.</p>
+                    <ul>
+                        <li>8 chapitres sur les agents IA autonomes</li>
+                        <li>Différence assistant IA vs agent autonome</li>
+                        <li>Outils no-code (Make.com, Zapier, Lindy.ai, CrewAI)</li>
+                        <li>Agent relanceur de factures (workflow complet)</li>
+                        <li>Agent prospecteur LinkedIn</li>
+                        <li>Agent contenu pour réseaux sociaux</li>
+                        <li>Agent service client 24/7</li>
+                        <li>Équipe d'agents collaboratifs</li>
+                        <li>Checklist de déploiement 7 jours</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=agents" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Le Système UGC IA -->
+    <div class="modal" id="modal-ugc">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('ugc')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/ugc-cover.jpg" alt="Le Système UGC IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Le Système UGC IA</h2>
+                    <span class="price">25 €</span>
+                    <p><strong>Crée des publicités vidéo qui vendent sans montrer ton visage.</strong></p>
+                    <p>Apprends à créer des publicités UGC (User Generated Content) avec l'IA : scripts convertissants, avatars IA parlants, voix off réalistes, montage CapCut, et diffusion sur TikTok, Instagram, Facebook et YouTube Shorts.</p>
+                    <ul>
+                        <li>8 chapitres sur le système UGC IA</li>
+                        <li>Différence pub classique vs UGC</li>
+                        <li>Outils IA : HeyGen, ElevenLabs, CapCut, Midjourney, Runway</li>
+                        <li>Structure de script UGC qui convertit (60-90 secondes)</li>
+                        <li>Workflow complet de création de publicité</li>
+                        <li>Diffusion sur TikTok Ads, Instagram Reels, Facebook Ads, YouTube Shorts</li>
+                        <li>Test, analyse et optimisation (ROAS, CTR, CPC)</li>
+                        <li>Scaling et création d'agence UGC IA</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=ugc" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: L'Empire YouTube Sans Visage IA -->
+    <div class="modal" id="modal-youtube">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('youtube')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/youtube-cover.jpg" alt="L'Empire YouTube Sans Visage IA">
+                </div>
+                <div class="modal-info">
+                    <h2>L'Empire YouTube Sans Visage IA</h2>
+                    <span class="price">24 €</span>
+                    <p><strong>Crée une chaîne YouTube rentable sans jamais montrer ton visage.</strong></p>
+                    <p>Apprends à créer, développer et monétiser une chaîne YouTube sans visage, entièrement pilotée par l'IA. Scripts, voix off, visuels, montage, monétisation et croissance : tout le système complet.</p>
+                    <ul>
+                        <li>8 chapitres détaillés sur les chaînes sans visage</li>
+                        <li>4 outils IA essentiels (ChatGPT, ElevenLabs, Canva, CapCut)</li>
+                        <li>Choix et validation de niche rentable</li>
+                        <li>Workflow complet de création vidéo (7 étapes)</li>
+                        <li>5 façons de monétiser (Pub, affiliation, produits, marques, coaching)</li>
+                        <li>Stratégie de croissance et automatisation</li>
+                        <li>7 erreurs à éviter et comment scaler</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=youtube" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Prompt Engineering IA -->
+    <div class="modal" id="modal-prompt">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('prompt')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/prompt-cover.jpg" alt="Prompt Engineering IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Prompt Engineering IA</h2>
+                    <span class="price">19 €</span>
+                    <p><strong>Maîtrise l'art de parler aux IA pour obtenir des résultats professionnels.</strong></p>
+                    <p>Apprends à structurer tes demandes aux IA pour obtenir des réponses précises, utiles et prêtes à l'emploi. Formule R-T-C-S, 5 types de prompts, 5 techniques avancées, 50 prompts copy-paste, et ta bibliothèque personnelle.</p>
+                    <ul>
+                        <li>8 chapitres sur le Prompt Engineering</li>
+                        <li>Formule R-T-C-S (Rôle, Tâche, Contexte, Spécificités)</li>
+                        <li>5 types de prompts (Rédaction, Analyse, Créativité, Code, Stratégie)</li>
+                        <li>5 techniques avancées (Few-Shot, Chain-of-Thought, Persona, Itération, Negative)</li>
+                        <li>50 prompts copy-paste pour le business</li>
+                        <li>Bibliothèque de prompts par secteur</li>
+                        <li>Ton système prompt personnel</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=prompt" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Vidéos Courtes Virales IA -->
+    <div class="modal" id="modal-shorts">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('shorts')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/shorts-cover.jpg" alt="Vidéos Courtes Virales IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Vidéos Courtes Virales IA</h2>
+                    <span class="price">24 €</span>
+                    <p><strong>Le système complet pour créer des TikTok, Reels et Shorts qui cartonnent sans montrer ton visage.</strong></p>
+                    <p>Apprends à créer, diffuser et monétiser des vidéos courtes virales avec l'IA : scripts, voix off, visuels, montage CapCut, et stratégie de croissance sur TikTok, Instagram et YouTube.</p>
+                    <ul>
+                        <li>8 chapitres sur les vidéos courtes virales</li>
+                        <li>Outils IA : ChatGPT, ElevenLabs, Midjourney, Runway, CapCut</li>
+                        <li>Formule de la vidéo virale (60 secondes)</li>
+                        <li>Workflow complet de création (7 étapes)</li>
+                        <li>Diffusion sur TikTok, Instagram Reels, YouTube Shorts</li>
+                        <li>Analyse et optimisation (taux de complétion, partages)</li>
+                        <li>5 façons de monétiser (fonds créateurs, affiliation, produits, marques, coaching)</li>
+                        <li>Système de batch production et scaling</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=shorts" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Micro-SaaS IA No-Code -->
+    <div class="modal" id="modal-microsaas">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('microsaas')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/micro-saas-cover.jpg" alt="Micro-SaaS IA No-Code">
+                </div>
+                <div class="modal-info">
+                    <h2>Micro-SaaS IA No-Code</h2>
+                    <span class="price">29 €</span>
+                    <p><strong>Crée ton petit logiciel SaaS rentable sans écrire une ligne de code.</strong></p>
+                    <p>Apprends à trouver une idée de micro-logiciel, le builder avec des outils no-code, l'automatiser avec l'IA, et le vendre par abonnement. Pas de développeur, pas de gros budget, juste toi et ton ordinateur.</p>
+                    <ul>
+                        <li>8 chapitres sur la création de micro-SaaS sans code</li>
+                        <li>Outils no-code : Softr, Airtable, Glide, FlutterFlow</li>
+                        <li>Intégration IA : OpenAI API, Make.com, Zapier</li>
+                        <li>Paiements et abonnements : Stripe, Lemon Squeezy, Gumroad</li>
+                        <li>Workflow complet de construction (6 étapes)</li>
+                        <li>Stratégie pour trouver tes premiers clients payants</li>
+                        <li>Automatisation et scaling vers l'indépendance</li>
+                        <li>Les 7 erreurs à éviter et les paliers de croissance</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=microsaas" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Cours en Ligne IA -->
+    <div class="modal" id="modal-cours">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('cours')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/cours-en-ligne-cover.jpg" alt="Cours en Ligne IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Cours en Ligne IA</h2>
+                    <span class="price">26 €</span>
+                    <p><strong>Crée et vends ta formation en 7 jours avec l'intelligence artificielle.</strong></p>
+                    <p>Apprends à créer, structurer, filmer (ou pas), et vendre ta propre formation en ligne en seulement 7 jours, avec l'aide de l'IA. Pas de studio coûteux. Pas de montage complexe. Juste ton expertise, l'IA, et un système clair.</p>
+                    <ul>
+                        <li>8 chapitres sur la création de formations en ligne</li>
+                        <li>Comment trouver et valider ton sujet de formation</li>
+                        <li>Structure de cours qui convertit (modules, leçons, exercices)</li>
+                        <li>Création de contenu : vidéo, audio, texte (sans studio coûteux)</li>
+                        <li>Plateformes d'hébergement : Gumroad, Teachable, Podia, Systeme.io</li>
+                        <li>Tunnel de vente en 7 jours pour lancer</li>
+                        <li>Marketing et promotion de ta formation</li>
+                        <li>Fidélisation et scaling vers des revenus récurrents</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=cours" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Agence d'Automatisation IA -->
+    <div class="modal" id="modal-agence">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('agence')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/agence-ia-cover.jpg" alt="Agence d'Automatisation IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Agence d'Automatisation IA</h2>
+                    <span class="price">35 €</span>
+                    <p><strong>Vends des systèmes d'intelligence artificielle aux entreprises.</strong></p>
+                    <p>Apprends à créer une agence qui vend des systèmes d'automatisation IA aux entreprises : chatbots, relances clients, création de contenu, qualification de prospects, gestion administrative. Pas de développeur, pas de gros budget, juste toi et les bons outils.</p>
+                    <ul>
+                        <li>8 chapitres sur la création d'agence IA</li>
+                        <li>Services à vendre et prix typiques (1 500 € à 10 000 € par projet)</li>
+                        <li>Outils no-code : Make.com, Zapier, Chatbase, ManyChat, Voiceflow</li>
+                        <li>Intégration IA : OpenAI API, Anthropic Claude, ElevenLabs</li>
+                        <li>Comment trouver tes premiers clients B2B (LinkedIn, email, partenariats)</li>
+                        <li>Workflow de livraison complet (audit, proposition, construction, formation)</li>
+                        <li>Tarification et négociation avec les entreprises</li>
+                        <li>Scaling, produits packagés, et délégation</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=agence" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Identité Visuelle IA -->
+    <div class="modal" id="modal-identite">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('identite')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/identite-visuelle-cover.jpg" alt="Identité Visuelle IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Identité Visuelle IA</h2>
+                    <span class="price">24 €</span>
+                    <p><strong>Crée toute l'image de ton business sans graphiste.</strong></p>
+                    <p>Apprends à créer une identité visuelle complète avec l'IA : logo, charte graphique, visuels réseaux sociaux, site web, supports commerciaux. Logos, couleurs, typographie, mise en page — tout le système pour une image professionnelle qui vend.</p>
+                    <ul>
+                        <li>8 chapitres sur le design de marque avec l'IA</li>
+                        <li>Outils : Midjourney, Ideogram, Canva IA, Looka, DALL-E, Framer IA</li>
+                        <li>Créer un logo et un symbole de marque professionnels</li>
+                        <li>Définir ta charte graphique (couleurs, typographie, style)</li>
+                        <li>Visuels réseaux sociaux (Instagram, TikTok, LinkedIn)</li>
+                        <li>Site web et landing page sans coder</li>
+                        <li>Supports commerciaux (présentations, factures, cartes de visite)</li>
+                        <li>Comment vendre tes services de design IA en freelance</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=identite" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Email Marketing IA -->
+    <div class="modal" id="modal-email">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('email')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/email-cover.jpg" alt="Email Marketing IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Email Marketing IA</h2>
+                    <span class="price">22 €</span>
+                    <p><strong>Crée des campagnes email qui vendent en automatique.</strong></p>
+                    <p>Apprends à construire ta liste email, rédiger des séquences de bienvenue qui convertissent, automatiser tes envois avec l'IA, et vendre par email sans paraître spammeur.</p>
+                    <ul>
+                        <li>8 chapitres sur l'email marketing avec l'IA</li>
+                        <li>Pourquoi l'email reste le canal le plus rentable (ROI 3600%)</li>
+                        <li>Construire ta liste email depuis zéro avec un lead magnet</li>
+                        <li>Séquence de bienvenue en 5 emails qui transforme un inconnu en client</li>
+                        <li>Rédiger des emails de vente avec l'IA (formule AIDA, sujets qui fonctionnent)</li>
+                        <li>Automatiser tes envois : bienvenue, nurturing, vente, panier abandonné</li>
+                        <li>Segmenter et personnaliser pour maximiser les ouvertures et les clics</li>
+                        <li>Analyser et optimiser (taux d'ouverture, clic, conversion)</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=email" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Finance IA -->
+    <div class="modal" id="modal-finance">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('finance')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/finance-cover.jpg" alt="L'Argent Intelligent IA">
+                </div>
+                <div class="modal-info">
+                    <h2>L'Argent Intelligent IA</h2>
+                    <div class="price">24 €</div>
+                    <p>Finance personnelle et revenus avec l'IA : budget intelligent, investissements simples, revenus complémentaires et protection anti-arnaque. La méthode 2026 pour les jeunes actifs et freelances.</p>
+                    <ul>
+                        <li>8 chapitres détaillés et professionnels</li>
+                        <li>Le prompt du bilan financier en 30 minutes</li>
+                        <li>Méthode budget 50/30/20 adaptée aux revenus irréguliers</li>
+                        <li>Checklist anti-arnaque financière 2026</li>
+                        <li>Plan financier sur 12 mois prêt à l'emploi</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=finance" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Productivité Notion IA -->
+    <div class="modal" id="modal-productivite">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('productivite')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/productivite-cover.jpg" alt="Productivité & Notion IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Productivité &amp; Notion IA</h2>
+                    <div class="price">22 €</div>
+                    <p>Le système ultime de productivité : un quartier général Notion augmenté par l'IA. Templates, prompts, automatisations et méthode des blocs de focus.</p>
+                    <ul>
+                        <li>8 chapitres détaillés et professionnels</li>
+                        <li>Architecture Notion en 4 espaces prête à copier</li>
+                        <li>15 prompts Notion AI copy-paste</li>
+                        <li>Méthode des blocs profonds (90 min de focus)</li>
+                        <li>Tableau des tâches à automatiser (gain moyen 8h/semaine)</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=productivite" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Commerce Agentique IA -->
+    <div class="modal" id="modal-agentique">
+        <div class="modal-content">
+            <a href="#" class="modal-close" onclick="closeModal('agentique')">&times;</a>
+            <div class="modal-body">
+                <div class="modal-cover">
+                    <img src="assets/images/agentique-cover.jpg" alt="Commerce Agentique IA">
+                </div>
+                <div class="modal-info">
+                    <h2>Commerce Agentique IA</h2>
+                    <div class="price">29 €</div>
+                    <p>La tendance n°1 du e-commerce 2026 : les agents IA achètent pour vos clients. Apprenez à rendre vos produits "agent-friendly", à dominer les réponses des IA et à installer le chat & buy.</p>
+                    <ul>
+                        <li>8 chapitres détaillés et professionnels</li>
+                        <li>Checklist fiche produit "agent-friendly"</li>
+                        <li>Balisage Schema.org prêt à copier</li>
+                        <li>Guide SEO pour agents IA (AEO) en français</li>
+                        <li>Script conversationnel chat & buy qui convertit</li>
+                        <li>Format PDF, téléchargement immédiat</li>
+                    </ul>
+                    <a href="checkout.html?book=agentique" class="btn btn-primary" style="width:100%">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="checkout-links.js"></script>
+    <script>
+        // Paiement reel : redirige les boutons Acheter si lien configure
+        (function () {
+            function applyLinks() {
+                document.querySelectorAll('a[href*="checkout.html?book="]').forEach(a => {
+                    const id = new URLSearchParams(a.href.split('?')[1]).get('book');
+                    const pay = window.getPaymentLink ? window.getPaymentLink(id) : null;
+                    if (pay) { a.href = pay; a.target = '_blank'; a.rel = 'noopener'; }
+                });
+                document.querySelectorAll('a[href="bundle.html"], a[href*="book=bundle"]').forEach(a => {
+                    const pay = window.getPaymentLink ? window.getPaymentLink('bundle') : null;
+                    if (pay && a.href.includes('book=bundle')) { a.href = pay; a.target = '_blank'; a.rel = 'noopener'; }
+                });
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyLinks);
+            else applyLinks();
+        })();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Modal functions
+        function openModal(bookId) {
+            const modal = document.getElementById('modal-' + bookId);
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(bookId) {
+            const modal = document.getElementById('modal-' + bookId);
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside content
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    const id = modal.id.replace('modal-', '');
+                    closeModal(id);
+                }
+            });
+        });
+
+        // FAQ toggle
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+            
+            // Open clicked if it was closed
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Close modal on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.open').forEach(m => {
+                    const id = m.id.replace('modal-', '');
+                    closeModal(id);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
